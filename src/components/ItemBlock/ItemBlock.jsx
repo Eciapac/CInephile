@@ -3,13 +3,8 @@ import BtnMore from '../UI/BtnMore'
 import { TAM } from '../../types/type'
 import { imageFull } from '../../store/url'
 import Actors from '../Actors/Actors'
-interface ItemBlockProps {
-  media: TAM,
-  active: boolean,
-  type: string,
-  close: () => void
-}
-const ItemBlock: React.FC<ItemBlockProps> = ({ media, active, type, close }) => {
+
+const ItemBlock = ({ media, active, type, close }) => {
   return (
     <div className={`media__info ${active ? 'active' : ''}`}>
       {media &&

@@ -1,6 +1,3 @@
-interface contentProp {
-  type: string
-}
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import popularStore, { selectPopularMovies, selectPopularTvs } from '../../store/popularStore';
@@ -9,11 +6,11 @@ import { imageMini } from '../../store/url';
 import { popularState, TAM } from '../../types/type';
 import ItemBlock from '../ItemBlock/ItemBlock';
 
-const Content:React.FC<contentProp> = ({type}) => {
-  const fetchPopular = popularStore((state:popularState) => state.fetchPopular)
+const Content = ({type}) => {
+  const fetchPopular = popularStore((state) => state.fetchPopular)
   const popularMovies = popularStore(selectPopularMovies)
   const popularTvs = popularStore(selectPopularTvs)
-  const isMounted = useRef<boolean>(false)
+  const isMounted = useRef(false)
   useEffect(() => {
     if(isMounted.current){
       fetchPopular(type, 1)
@@ -22,7 +19,7 @@ const Content:React.FC<contentProp> = ({type}) => {
   }, [isMounted.current])
   const [media, setMedia] = useState<TAM | null>(null)
   const [active, setActive] = useState<boolean>(false)
-  const getMedia = (type:string, item:TAM) => {
+  const getMedia = (type, item) => {
     if(type === 'movie') setMedia(item)
     else setMedia(item)
     setActive(true)
@@ -50,7 +47,7 @@ const Content:React.FC<contentProp> = ({type}) => {
           pagination: false
         }}
       >
-        { type === 'movie' ? popularMovies?.map((item, idx:number) => (
+        { type === 'movie' ? popularMovies?.map((item, idx) => (
           <SplideSlide 
             className="media__slider-item"
             key={idx}
@@ -58,7 +55,7 @@ const Content:React.FC<contentProp> = ({type}) => {
           >
             <img src={imageMini + item.poster_path} alt="" />
           </SplideSlide>
-        )) :  popularTvs?.map((item, idx:number) => (
+        )) :  popularTvs?.map((item, idx) => (
           <SplideSlide 
             className="media__slider-item"
             key={idx}

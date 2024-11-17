@@ -3,7 +3,7 @@ import Tvs from "../components/TAM/Tvs"
 import TopRated from "../components/TopRated/TopRated"
 import Upcoming from "../components/Upcoming/Upcoming"
 
-const Home:React.FC = () => {
+const Home = () => {
   return (
     <>
       <Upcoming/>

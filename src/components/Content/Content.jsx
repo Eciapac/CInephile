@@ -5,13 +5,13 @@ import { useEffect, useRef, useState } from "react"
 import { imageMini } from "../../store/url"
 
 const Content = ({type}) => {
-    const fetchPopular = popularStore((state:popularState) => state.fetchPopular)
+    const fetchPopular = popularStore((state) => state.fetchPopular)
     const popularMovies = popularStore(selectPopularMovies)
     const popularTvs = popularStore(selectPopularTvs)
     const isMounted = useRef<boolean>(false)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [totalPages, setTotalPages] = useState<number>(500)
-    const [content, setContent] = useState<null | TAM[]>(null)
+    const [content, setContent] = useState(null)
     useEffect(() => {
       if(isMounted.current){
         fetchPopular(type, currentPage)
@@ -20,7 +20,7 @@ const Content = ({type}) => {
       }
       isMounted.current = true
     }, [isMounted.current, fetchPopular, popularMovies, popularTvs])
-    const changePage = (dir:string) => {
+    const changePage = (dir) => {
       if(dir === 'back'){
         setCurrentPage(currentPage-1)
       }else{

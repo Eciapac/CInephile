@@ -1,6 +1,6 @@
 import Logo from "images/Logo.svg"
 import { NavLink } from "react-router-dom"
-const Header:React.FC = () => {
+const Header = () => {
   return (
     <header className="header">
         <nav className="container header__nav">

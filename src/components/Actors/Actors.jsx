@@ -2,12 +2,8 @@ import { useEffect, useRef } from "react"
 import actorsStore, { selectMovieActors, selectTvActors } from "../../store/actorsStore"
 import { imageMini } from "../../store/url"
 
-interface actorsProps {
-  type: string,
-  id: number,
-  count: number
-}
-const Actors: React.FC<actorsProps> = ({ type, id, count }) => {
+
+const Actors = ({ type, id, count }) => {
   const fetchActors = actorsStore((state) => state.fetchActors)
   const movieActors = actorsStore(selectMovieActors)
   const tvActors = actorsStore(selectTvActors)

@@ -6,7 +6,7 @@ import Tvs from "./pages/Tvs"
 import Search from "./pages/Search"
 import Current from "./components/Current/Current"
 
-const App:React.FC = () => {
+const App = () => {
   return (
     <Router>
       <Header />

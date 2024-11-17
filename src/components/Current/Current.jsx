@@ -50,9 +50,9 @@ const Current = () => {
                       <p>{movie?.overview ?? tv?.overview}</p>
                       <div>
                           <span>{new Date(movie?.release_date ?? tv?.first_air_date).getFullYear()},</span>
-                          {movie ? movie?.genres.map((item, idx:number) => (
+                          {movie ? movie?.genres.map((item, idx) => (
                             <span key={idx}>{item.name},</span>
-                          )) : tv?.genres.map((item, idx:number) => (
+                          )) : tv?.genres.map((item, idx) => (
                             <span key={idx}>{item.name},</span>
                           ))}
                           <span>

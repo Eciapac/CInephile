@@ -16,6 +16,6 @@ const popularStore = create<popularState>((set) => ({
         }
     }
 }))
-export const selectPopularMovies = (state:popularState) => state.popularMovies
-export const selectPopularTvs = (state:popularState) => state.popularTvs
+export const selectPopularMovies = (state) => state.popularMovies
+export const selectPopularTvs = (state) => state.popularTvs
 export default popularStore

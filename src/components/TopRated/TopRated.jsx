@@ -4,10 +4,10 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { imageMini } from "../../store/url";
 import { Link } from "react-router-dom";
-const TopRated:React.FC = () => {
+const TopRated = () => {
   const fetchTop = topRatedStore((state) => state.fetchTop)
   const top = topRatedStore(selectTop)
-  const isMounted = useRef<boolean>(false)
+  const isMounted = useRef(false)
   useEffect(() => {
     if(isMounted.current){
       fetchTop()
@@ -32,7 +32,7 @@ const TopRated:React.FC = () => {
           pagination: false
         }}
       >
-        { top?.map((item, idx:number) => (
+        { top?.map((item, idx) => (
           <SplideSlide 
             className="top__slider-item"
             key={idx}

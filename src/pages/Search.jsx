@@ -20,7 +20,7 @@ const Search = () => {
     <div className="container search">
       <input type="search" placeholder="Найти фильм, сериал..." autoFocus onChange={(e) => setQuery(e.target.value)}/>
       <div className="search__results">
-        { data?.map((item:TAM,idx:number) => (
+        { data?.map((item,idx) => (
           <Link to={`/${item.title ? 'movie' : 'tv'}/${item.id}`} key={idx}>
             <img src={imageMini + item.poster_path} alt="" />
           </Link>

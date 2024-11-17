@@ -2,7 +2,7 @@ import { imageFull, imageMini } from "../../store/url";
 import { upcomingItemProps } from "../../types/type";
 import BtnMore from "../UI/BtnMore"
 
-const UpcomingItem: React.FC<upcomingItemProps> = ({ movie, nextSlide, next}) => {
+const UpcomingItem = ({ movie, nextSlide, next}) => {
   return (
     <div className="main__upcoming-item">
       <img src={imageFull + movie.backdrop_path} alt="" />

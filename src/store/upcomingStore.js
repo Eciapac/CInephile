@@ -1,9 +1,8 @@
 import { create } from "zustand";
 import { apiKey, apiUrl } from "./url";
 import axios from "axios";
-import { upcomingState } from "../types/type";
 
-const upcomingStore = create<upcomingState>((set) => ({
+const upcomingStore = create((set) => ({
     upcoming: null,
     fetchUpcoming: async () => {
         try {
@@ -15,5 +14,5 @@ const upcomingStore = create<upcomingState>((set) => ({
         }
     }
 }))
-export const selectUpcoming = (state:upcomingState) => state.upcoming
+export const selectUpcoming = (state) => state.upcoming
 export default upcomingStore

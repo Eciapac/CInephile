@@ -1,6 +1,5 @@
 import Close from 'images/Close.svg'
 import BtnMore from '../UI/BtnMore'
-import { TAM } from '../../types/type'
 import { imageFull } from '../../store/url'
 import Actors from '../Actors/Actors'
 

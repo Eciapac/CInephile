@@ -2,13 +2,12 @@ import { useEffect, useRef, useState } from "react"
 import searchStore, { selectData } from "../store/searchStore"
 import { Link } from "react-router-dom"
 import { imageMini } from "../store/url"
-import { TAM } from "../types/type"
 
 const Search = () => {
   const [query, setQuery] = useState<string>('')
   const fetchData = searchStore((state) => state.fetchData)
   const data = searchStore(selectData)
-  const isMounted = useRef<boolean>(false)
+  const isMounted = useRef(false)
   useEffect(() => {
     if(isMounted.current && query.length > 1){
       fetchData(query)

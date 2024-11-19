@@ -5,8 +5,8 @@ import UpcomingItem from "./UpcomingItem"
 const Upcoming = () => {
   const fetchUpcoming = upcomingStore((state) => state.fetchUpcoming)
   const upcoming = upcomingStore(selectUpcoming)
-  const [slideView, setSlideView] = useState<number>(0)
-  const isMounted = useRef<boolean>(false)
+  const [slideView, setSlideView] = useState(0)
+  const isMounted = useRef(false)
   useEffect(() => {
     if(isMounted.current){
       const interval = setInterval(() => {

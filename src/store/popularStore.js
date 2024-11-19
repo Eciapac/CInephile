@@ -1,8 +1,7 @@
 import { create } from "zustand";
 import { apiKey, apiUrl } from "./url";
 import axios from "axios";
-import { popularState } from "../types/type";
-const popularStore = create<popularState>((set) => ({
+const popularStore = create((set) => ({
     popularMovies: [],
     popularTvs: [],
     fetchPopular: async (type, currentPage) => {

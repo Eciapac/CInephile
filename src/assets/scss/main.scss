@@ -1,4 +1,13 @@
-@import url(fonts.scss);
+@use '../../components/Header/Header.scss';
+@use '../../components/Upcoming/Upcoming.scss';
+@use '../../components/TAM/TAM.scss';
+@use '../../components/ItemBlock/ItemBlock.scss';
+@use '../../components/TopRated/TopRated.scss';
+@use '../../components/Actors/Actors.scss';
+@use '../../components/Content/Content.scss';
+@use '../../components/Current/Current.scss';    
+
+@use 'fonts.scss';
 *{
     padding: 0;
     margin: 0;
@@ -52,11 +61,3 @@ body{
     }
 }
 
-@import 'components/Header/Header.scss';
-@import 'components/Upcoming/Upcoming.scss';    
-@import 'components/TAM/TAM.scss';
-@import 'components/ItemBlock/ItemBlock.scss';
-@import 'components/TopRated/TopRated.scss';
-@import 'components/Actors/Actors.scss';
-@import 'components/Content/Content.scss';
-@import 'components/Current/Current.scss';

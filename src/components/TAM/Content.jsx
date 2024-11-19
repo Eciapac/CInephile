@@ -3,7 +3,6 @@ import '@splidejs/react-splide/css';
 import popularStore, { selectPopularMovies, selectPopularTvs } from '../../store/popularStore';
 import { useEffect, useRef, useState } from 'react';
 import { imageMini } from '../../store/url';
-import { popularState, TAM } from '../../types/type';
 import ItemBlock from '../ItemBlock/ItemBlock';
 
 const Content = ({type}) => {
@@ -17,8 +16,8 @@ const Content = ({type}) => {
     }
     isMounted.current = true
   }, [isMounted.current])
-  const [media, setMedia] = useState<TAM | null>(null)
-  const [active, setActive] = useState<boolean>(false)
+  const [media, setMedia] = useState(null)
+  const [active, setActive] = useState(false)
   const getMedia = (type, item) => {
     if(type === 'movie') setMedia(item)
     else setMedia(item)

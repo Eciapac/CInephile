@@ -7,7 +7,7 @@ const Actors = ({ type, id, count }) => {
   const fetchActors = actorsStore((state) => state.fetchActors)
   const movieActors = actorsStore(selectMovieActors)
   const tvActors = actorsStore(selectTvActors)
-  const isMounted = useRef<boolean>(false)
+  const isMounted = useRef(false)
   useEffect(() => {
     if (isMounted.current) {
       fetchActors(type, id, count)

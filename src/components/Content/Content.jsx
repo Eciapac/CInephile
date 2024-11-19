@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
-import popularStore, { selectPopularMovies, selectPopularTvs } from "../../store/popularStore"
-import { popularState, TAM } from "../../types/type"
+import popularStore, { selectPopularMovies, selectPopularTvs } from "../../store/popularStore.js"
 import { useEffect, useRef, useState } from "react"
 import { imageMini } from "../../store/url"
 
@@ -8,9 +7,9 @@ const Content = ({type}) => {
     const fetchPopular = popularStore((state) => state.fetchPopular)
     const popularMovies = popularStore(selectPopularMovies)
     const popularTvs = popularStore(selectPopularTvs)
-    const isMounted = useRef<boolean>(false)
-    const [currentPage, setCurrentPage] = useState<number>(1)
-    const [totalPages, setTotalPages] = useState<number>(500)
+    const isMounted = useRef(false)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(500)
     const [content, setContent] = useState(null)
     useEffect(() => {
       if(isMounted.current){

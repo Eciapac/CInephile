@@ -1,5 +1,4 @@
 import { imageFull, imageMini } from "../../store/url";
-import { upcomingItemProps } from "../../types/type";
 import BtnMore from "../UI/BtnMore"
 
 const UpcomingItem = ({ movie, nextSlide, next}) => {

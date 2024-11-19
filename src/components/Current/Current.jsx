@@ -15,7 +15,7 @@ const Current = () => {
     const tvVideo     = videosStore(selectVideoTv)
     const fetchRec = recStore((state) => state.fetchRec)
     const rec  = recStore(selectRec)
-    const isMounted = useRef<boolean>(false)
+    const isMounted = useRef(false)
     const {type, id} = useParams()
     useEffect(() => {
       if(isMounted.current){

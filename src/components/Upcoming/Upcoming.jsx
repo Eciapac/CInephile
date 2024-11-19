@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import upcomingStore, { selectUpcoming } from "../../store/upcomingStore"
 import UpcomingItem from "./UpcomingItem"
 
-const Upcoming:React.FC = () => {
+const Upcoming = () => {
   const fetchUpcoming = upcomingStore((state) => state.fetchUpcoming)
   const upcoming = upcomingStore(selectUpcoming)
   const [slideView, setSlideView] = useState<number>(0)
